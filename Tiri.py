@@ -1,13 +1,13 @@
 import tkinter as tk
-
+from tkinter import ttk
 
 class applacation():
     def send(self, key=None):
-        if self.mainSendText.get('1.0', tk.END) != '':
+        if self.mainSendText.get() != '':
             self.mainDialog.configure(state=tk.NORMAL)
             self.mainSendText.delete(tk.END, tk.END)
-            self.mainDialog.insert(tk.END, '我：' + self.mainSendText.get('1.0', tk.END) + '\n')
-            self.mainSendText.delete('1.0', tk.END)
+            self.mainDialog.insert(tk.END, '我：' + self.mainSendText.get() + '\n')
+            self.mainSendText.delete(0, tk.END)
             self.mainDialog.configure(state=tk.DISABLED)
 
     def help(self):
@@ -23,7 +23,7 @@ class applacation():
 
         # 标题
         tk.Label(self.root, text='Tiri', font=('宋体', 30)).pack()
-        tk.Label(self.root, text='您的人工智障问答软件 V1.0.10051', font=('宋体', 12)).pack()
+        tk.Label(self.root, text='您的人工智障问答软件 V1.0.4', font=('宋体', 12)).pack()
 
         # mainFrame
         self.mainFrame = tk.LabelFrame(self.root, text='输入框')
@@ -32,7 +32,7 @@ class applacation():
         self.mainDialogFrame = tk.Frame(self.mainFrame)
         self.mainDialogFrame.pack()
 
-        self.mainScrollbar = tk.Scrollbar(self.mainDialogFrame)
+        self.mainScrollbar = ttk.Scrollbar(self.mainDialogFrame)
         self.mainScrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 
         self.mainDialog = tk.Text(self.mainDialogFrame, yscrollcommand=self.mainScrollbar.set,
@@ -45,18 +45,18 @@ class applacation():
         self.mainSendFrame = tk.Frame(self.mainFrame)
         self.mainSendFrame.pack()
 
-        self.mainSendText = tk.Text(self.mainSendFrame, width=49, height=2, font=('宋体', 12))
+        self.mainSendText = ttk.Entry(self.mainSendFrame, width=49, font=('宋体', 12))
         self.mainSendText.pack(side=tk.LEFT)
         self.mainSendText.bind("<Return>", self.send)
 
-        self.mainSendButton = tk.Button(self.mainSendFrame, text='发送', width=10, height=2, font=('宋体', 12), command=self.send)
+        self.mainSendButton = ttk.Button(self.mainSendFrame, text='发送', width=10, command=self.send)
         self.mainSendButton.pack(side=tk.RIGHT)
 
         # mainFrame pack
         self.mainFrame.pack()
 
         # 帮助按钮
-        self.helpButton = tk.Button(self.root, text='帮助', width=10, height=2, font=('宋体', 12), command=self.help)
+        self.helpButton = ttk.Button(self.root, text='帮助', width=10, command=self.help)
         self.helpButton.pack()
 
         # mainloop
