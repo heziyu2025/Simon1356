@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox as message
 
 class applacation():
     def helpQuit(self):
@@ -13,6 +14,8 @@ class applacation():
             self.mainDialog.insert(tk.END, '我：' + self.mainSendText.get() + '\n')
             self.mainSendText.delete(0, tk.END)
             self.mainDialog.configure(state=tk.DISABLED)
+        else:
+            message.showerror(title='错误', message='不能发送空消息')
 
     def help(self):
         self.helpRoot = tk.Tk()
