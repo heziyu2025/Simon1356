@@ -33,14 +33,14 @@ class applacation():
         self.root.geometry('600x400')
 
         # 标题
-        tk.Label(self.root, text='Tiri', font=('宋体', 30)).pack()
-        tk.Label(self.root, text='您的人工智障问答软件 V1.0.4 I', font=('宋体', 12)).pack()
+        ttk.Label(self.root, text='Tiri', font=('宋体', 30)).pack()
+        ttk.Label(self.root, text='您的人工智障问答软件 V1.0.4 I', font=('宋体', 12)).pack()
 
         # mainFrame
-        self.mainFrame = tk.LabelFrame(self.root, text='输入框')
+        self.mainFrame = ttk.LabelFrame(self.root, text='输入框')
 
         # mainDialog
-        self.mainDialogFrame = tk.Frame(self.mainFrame)
+        self.mainDialogFrame = ttk.Frame(self.mainFrame)
         self.mainDialogFrame.pack()
 
         self.mainScrollbar = ttk.Scrollbar(self.mainDialogFrame)
@@ -53,7 +53,7 @@ class applacation():
         self.mainDialog.configure(state=tk.DISABLED)
 
         # mainSend
-        self.mainSendFrame = tk.Frame(self.mainFrame)
+        self.mainSendFrame = ttk.Frame(self.mainFrame)
         self.mainSendFrame.pack()
 
         self.mainSendText = ttk.Entry(self.mainSendFrame, width=49, font=('宋体', 12))
