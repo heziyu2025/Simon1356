@@ -3,7 +3,6 @@ from tkinter import ttk
 
 class applacation():
     def helpQuit(self):
-        print('Quit')
         self.helpRoot.destroy()
         self.root.mainloop()
 
