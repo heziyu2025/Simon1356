@@ -36,7 +36,7 @@ class applacation():
 
         # 标题
         ttk.Label(self.root, text='Tiri', font=('宋体', 30)).pack()
-        ttk.Label(self.root, text='您的人工智障问答软件 V1.0.4 I', font=('宋体', 12)).pack()
+        ttk.Label(self.root, text='您的人工智障问答软件 V1.0.5', font=('宋体', 12)).pack()
 
         # mainFrame
         self.mainFrame = ttk.LabelFrame(self.root, text='输入框')
